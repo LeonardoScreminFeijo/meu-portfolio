@@ -60,9 +60,9 @@ export default function Sobre() {
 
           <motion.p variants={itemAnimation}>
             Quando não estou codando ou arrumando racks de servidores, você
-            provavelmente vai me encontrar treinando Jiu-Jitsu, pilotando caças
-            no DCS World, explorando realidade virtual no Quest 3s ou passando
-            tempo com minha noiva, Ana Carolina, e nosso cachorro.
+            provavelmente vai me encontrar pilotando caças no DCS World,
+            explorando realidade virtual no Quest 3s ou passando tempo com minha
+            noiva, Ana Carolina, e nosso cachorro.
           </motion.p>
         </motion.div>
 

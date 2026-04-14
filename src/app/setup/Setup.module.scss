@@ -1,0 +1,75 @@
+@import "../../styles/_variables.module.scss";
+
+.setupContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 160px 2rem 4rem;
+}
+
+.title {
+  color: $accent-color;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.pcCard {
+  background-color: $bg-secondary;
+  border: 1px solid $border-color;
+  border-radius: 16px;
+  padding: 2rem;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    border-color: $accent-color;
+    transform: translateY(-5px);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $text-main;
+
+    span {
+      color: $accent-color;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.specList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+
+  strong {
+    font-size: 0.75rem;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  span {
+    color: $text-main;
+    font-size: 1.1rem;
+    font-family: "Consolas", monospace;
+  }
+}
