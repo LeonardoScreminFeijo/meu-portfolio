@@ -1,9 +1,7 @@
-"use client"; // Necessário para animações no lado do cliente (Framer Motion)
+"use client"; // Necessário para animações no lado do cliente
 
 import styles from "./Sobre.module.scss";
 import { motion, Variants } from "framer-motion";
-
-// Configuração da animação base (O texto "sobe" 60px e aparece com fade-in)
 const itemAnimation: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },

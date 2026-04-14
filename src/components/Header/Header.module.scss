@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Efeito glassmorphism (vidro) para dar a vibe tech moderna */
+  /* Efeito glassmorphism (vidro) */
   background: rgba($bg-primary, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid $border-color;
@@ -41,7 +41,7 @@
   list-style: none;
 
   @media (max-width: 768px) {
-    display: none; // No futuro podemos criar um menu hambúrguer aqui
+    display: none;
   }
 }
 
@@ -59,7 +59,6 @@
   &.active {
     color: $accent-color;
 
-    // Traço neon embaixo do link ativo
     &::after {
       content: "";
       position: absolute;

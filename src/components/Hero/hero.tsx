@@ -50,9 +50,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className={styles.imageGlow}>
-            {/* Por enquanto, deixei uma div vazia simulando sua foto para não dar erro de imagem ausente.
-              Depois substituímos pela tag <Image> do Next.js!
-            */}
+            {}
             <div
               className={styles.profilePic}
               style={{ width: "300px", height: "300px" }}
