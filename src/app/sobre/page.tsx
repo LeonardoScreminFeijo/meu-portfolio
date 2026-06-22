@@ -1,7 +1,9 @@
-"use client"; // Necessário para animações no lado do cliente (Framer Motion)
+"use client";
 
 import styles from "./Sobre.module.scss";
 import { motion, Variants } from "framer-motion";
+import SkillGrid from "@/components/SkillGrid/SkillGrid";
+import Timeline from "@/components/Timeline/Timeline";
 
 // Configuração da animação base (O texto "sobe" 60px e aparece com fade-in)
 const itemAnimation: Variants = {
@@ -60,12 +62,6 @@ export default function Sobre() {
             possível para o usuário final.
           </motion.p>
 
-          <motion.p variants={itemAnimation}>
-            Quando não estou codando ou arrumando racks de servidores, você
-            provavelmente vai me encontrar treinando Jiu-Jitsu, pilotando caças
-            no DCS World, explorando realidade virtual no Quest 3s ou passando
-            tempo com minha noiva, Ana Carolina, e nosso cachorro.
-          </motion.p>
         </motion.div>
 
         {/* Lado Direito: Card de Resumo animando um pouquinho depois */}
@@ -89,8 +85,52 @@ export default function Sobre() {
             <h3>Educação</h3>
             <p>Análise e Desenvolvimento de Sistemas (ADS)</p>
           </div>
+
+          <div className={styles.cardBlock}>
+            <h3>Links</h3>
+            <div className={styles.socialLinks}>
+              <a
+                href="https://github.com/LeonardoScreminFeijo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/leonardosfeijo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </motion.aside>
       </div>
+
+      <motion.section
+        className={styles.extraSection}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className={styles.sectionTitle}>Stack Técnico</h2>
+        <SkillGrid />
+      </motion.section>
+
+      <motion.section
+        className={styles.extraSection}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className={styles.sectionTitle}>Trajetória</h2>
+        <Timeline />
+      </motion.section>
     </main>
   );
 }
