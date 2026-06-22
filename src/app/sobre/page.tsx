@@ -1,7 +1,10 @@
-"use client"; // Necessário para animações no lado do cliente
+"use client";
 
 import styles from "./Sobre.module.scss";
 import { motion, Variants } from "framer-motion";
+import SkillGrid from "@/components/SkillGrid/SkillGrid";
+import Timeline from "@/components/Timeline/Timeline";
+
 const itemAnimation: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
@@ -10,7 +13,6 @@ const itemAnimation: Variants = {
 export default function Sobre() {
   return (
     <main className={styles.sobreContainer}>
-      {/* Título com animação simples */}
       <motion.h1
         className={styles.title}
         initial="hidden"
@@ -21,7 +23,6 @@ export default function Sobre() {
       </motion.h1>
 
       <div className={styles.contentGrid}>
-        {}
         <motion.div
           className={styles.textSection}
           initial="hidden"
@@ -57,16 +58,8 @@ export default function Sobre() {
             funcionem bem no servidor, mas que entreguem a melhor experiência
             possível para o usuário final.
           </motion.p>
-
-          <motion.p variants={itemAnimation}>
-            Quando não estou codando ou arrumando racks de servidores, você
-            provavelmente vai me encontrar pilotando caças no DCS World,
-            explorando realidade virtual no Quest 3s ou passando tempo com minha
-            noiva, Ana Carolina, e nosso cachorro.
-          </motion.p>
         </motion.div>
 
-        {/* Lado Direito: Card de Resumo animando um pouquinho depois */}
         <motion.aside
           className={styles.infoCard}
           initial={{ opacity: 0, x: 50 }}
@@ -87,8 +80,52 @@ export default function Sobre() {
             <h3>Educação</h3>
             <p>Análise e Desenvolvimento de Sistemas (ADS)</p>
           </div>
+
+          <div className={styles.cardBlock}>
+            <h3>Links</h3>
+            <div className={styles.socialLinks}>
+              <a
+                href="https://github.com/LeonardoScreminFeijo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/leonardosfeijo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </motion.aside>
       </div>
+
+      <motion.section
+        className={styles.extraSection}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className={styles.sectionTitle}>Stack Técnico</h2>
+        <SkillGrid />
+      </motion.section>
+
+      <motion.section
+        className={styles.extraSection}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className={styles.sectionTitle}>Trajetória</h2>
+        <Timeline />
+      </motion.section>
     </main>
   );
 }
