@@ -2,7 +2,9 @@
 
 import styles from "./Hero.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import profilePic from "@/images/eu.jpeg";
 
 export default function Hero() {
   return (
@@ -50,11 +52,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className={styles.imageGlow}>
-            {}
-            <div
-              className={styles.profilePic}
-              style={{ width: "300px", height: "300px" }}
-            />
+            <div className={styles.imageClip}>
+              <Image
+                src={profilePic}
+                alt="Leonardo Scremin Feijó"
+                width={320}
+                height={320}
+                className={styles.profilePic}
+                priority
+              />
+            </div>
           </div>
         </motion.div>
       </div>
