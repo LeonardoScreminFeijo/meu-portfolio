@@ -4,8 +4,14 @@ import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import styles from "./projetos.module.scss";
 
 export const metadata: Metadata = {
-  title: "Projetos | Leonardo",
-  description: "Projetos desenvolvidos por Leonardo Scremin Feijó.",
+  title: "Projetos",
+  description:
+    "Projetos reais desenvolvidos por Leonardo Scremin Feijó — cada um com um problema específico para resolver.",
+  openGraph: {
+    title: "Projetos | Leonardo",
+    description:
+      "Projetos reais desenvolvidos com Next.js, React, TypeScript, AWS e mais.",
+  },
 };
 
 export default function ProjetosPage() {
