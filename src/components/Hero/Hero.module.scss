@@ -1,7 +1,7 @@
 @import "../../styles/_variables.module.scss";
 
 .heroSection {
-  min-height: 90vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -100,9 +100,12 @@
 
 .imageGlow {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 410px;
+  height: 410px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &::before {
     content: "";
@@ -119,13 +122,24 @@
   }
 }
 
-.profilePic {
+.imageClip {
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  object-fit: cover;
-  position: relative;
-  z-index: 1;
+  overflow: hidden;
   border: 2px solid $border-color;
   background-color: $bg-secondary;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.profilePic {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
 }
 
 @keyframes pulse {

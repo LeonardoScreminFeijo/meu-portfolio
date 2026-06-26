@@ -1,0 +1,120 @@
+@import "../../styles/_variables.module.scss";
+
+.card {
+  background-color: $bg-secondary;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    border-color: $accent-color;
+    box-shadow: 0 0 20px rgba(0, 112, 243, 0.1);
+  }
+
+  &.featured {
+    border-color: rgba(0, 112, 243, 0.4);
+    grid-column: 1 / -1;
+
+    .body {
+      max-width: 720px;
+    }
+  }
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background-color: $accent-color;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-main;
+  padding-right: 5rem;
+}
+
+.description {
+  color: $text-muted;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.stack {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tech {
+  background-color: $bg-primary;
+  border: 1px solid $border-color;
+  color: $text-muted;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btnDetail {
+  background-color: $accent-color;
+  color: #fff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: filter 0.2s ease;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+.externalLinks {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btnExternal {
+  color: $text-muted;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid $border-color;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $text-main;
+    border-color: $text-main;
+  }
+}
